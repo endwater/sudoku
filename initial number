@@ -1,0 +1,11 @@
+void initial_number(int board[][9], int row, int column) {
+	string number;
+	for (int i = 0; i <row; i++) {
+		cout << "Please enter the number of line " << i << ": ";
+		cin >> number;
+		for (int j = 0; j < column; j++) {
+			board[i][j] = ((int)number[j])%48;
+		}
+		print_board(board, 9, 9);
+	}
+}
