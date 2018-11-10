@@ -1,0 +1,23 @@
+#include "stdafx.h"
+#include <iostream>
+#include <string>
+#include <math.h>
+using namespace std;
+void print_board(const int board[][9], int row, int column);
+void initial_number(int board[][9], int row, int column);
+bool valid_insert(const int input, const int board[][9], int c_row, int c_column);
+bool process(int board[][9], int c_row, int c_column);
+int main() {
+	const int row = 9, column = 9;
+	int board[9][9] = { 0 };
+	print_board(board, row, column);
+	initial_number(board, row, column);
+	bool get = process(board, 0, 0);
+	if (get) {
+		cout << "it is answer" << endl;
+		print_board(board, row, column);
+	}
+	else  cout << "Wrong!" << endl;
+	system("pause");
+	return 0;
+}
